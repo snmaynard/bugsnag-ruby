@@ -21,13 +21,13 @@ How to Install (Rails)
     gem "bugsnag"
     ```
 
-2.  Install the gem
+1.  Install the gem
 
     ```shell
     bundle install
     ```
 
-3.  Copy the following code to a new file at `config/initializers/bugsnag.rb`
+1.  Copy the following code to a new file at `config/initializers/bugsnag.rb`
 
     ```ruby
     Bugsnag.configure do |config|
@@ -38,15 +38,23 @@ How to Install (Rails)
 How to Install (Sinatra)
 ------------------------
 
-```ruby
-require "bugsnag"
+1.  Install the gem
 
-Bugsnag.configure do |config|
-  config.api_key = "YOUR_API_KEY_HERE"
-end
+    ```shell
+    sudo gem install bugsnag
+    ```
 
-use Bugsnag::Rack
-```
+1.  Initialise the bugsnag notifier in your Sinatra app
+
+    ```ruby
+    require "bugsnag"
+
+    Bugsnag.configure do |config|
+      config.api_key = "YOUR_API_KEY_HERE"
+    end
+
+    use Bugsnag::Rack
+    ```
 
 
 Send Non-Fatal Exceptions to Bugsnag
